@@ -375,6 +375,7 @@ body {
 
 @media (max-width: 650px) {
 	.artist__avatar {
+margin-right: 0;
 		margin-bottom: 15px;
 	}
 	.artist__page {

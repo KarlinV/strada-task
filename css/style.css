@@ -1,0 +1,438 @@
+@font-face {
+	font-family: "YSText";
+	src: url("YandexSansDisplay-Regular.woff2") format("woff2"), url("YandexSansDisplay-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "YSText";
+	src: url("YandexSansDisplay-Bold.woff2") format("woff2"), url("YandexSansDisplay-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+
+:root {
+	--c-gray-text: rgb(119 119 119);
+	--c-gray-border: rgb(229 229 229);
+	--c-yellow: rgb(255 214 51);
+	--c-red: rgb(255 51 51);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	min-height: 100%;
+}
+
+body {
+	font-family: YSText, Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 18px;
+	color: rgb(34 34 34);
+}
+
+.artist {
+	margin-top: 30px;
+}
+
+.container {
+	max-width: 950px;
+	min-width: 390px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+
+.artist__page {
+	display: flex;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.artist__avatar {
+	width: 200px;
+	height: 200px;
+	margin-right: 30px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	overflow: hidden;
+}
+
+.artist__avatar img {
+	vertical-align: bottom;
+}
+
+.artist__page-right {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-grow: 1;
+}
+
+.artist__stamp {
+	margin-bottom: 5px;
+	text-transform: uppercase;
+	color: var(--c-gray-text);
+}
+.artist__title {
+	margin-bottom: 7px;
+	font-size: 45px;
+	line-height: 45px;
+	font-weight: 700;
+	word-break: break-word;
+}
+
+.artist__summary {
+	color: rgb(0 0 0 / 90%);
+}
+
+.artist__page-button {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.artist__page-button-left,
+.artist__page-button-right {
+	display: flex;
+	align-items: center;
+}
+.btn {
+	min-width: 40px;
+	height: 40px;
+	border: 1px solid var(--c-gray-border);
+	border-radius: 20px;
+	background: transparent;
+	line-height: 38px;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: border-color 0.15s ease-out;
+	-webkit-transition: border-color 0.15s ease-out;
+	-moz-transition: border-color 0.15s ease-out;
+	-ms-transition: border-color 0.15s ease-out;
+	-o-transition: border-color 0.15s ease-out;
+}
+
+.btn:not(:last-child) {
+	margin-right: 10px;
+}
+.btn__all-play {
+	position: relative;
+	padding: 0px 16px 0px 40px;
+	border: 0;
+	background-color: rgb(255 219 77);
+	transition: background 0.15s ease-out;
+}
+
+.btn__all-play:hover {
+	background: rgb(255 214 51);
+}
+.btn__all-play-icon,
+.btn__like-icon,
+.btn__radio-icon {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	display: block;
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+
+.btn__all-play-icon {
+	background-image: url(../image/icons/play.svg);
+}
+
+.btn__like,
+.btn__radio {
+	position: relative;
+	padding: 0px 16px 0px 40px;
+}
+.btn__like-icon {
+	background-image: url(../image/icons/like.svg);
+}
+
+.btn__share,
+.btn__not-recommend {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn__share-icon,
+.btn__not-recommend-icon {
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.btn__share-icon {
+	background-image: url(../image/icons/share.svg);
+}
+
+.btn__radio-icon {
+	background-image: url(../image/icons/radio.svg);
+}
+
+.btn__not-recommend-icon {
+	background-image: url(../image/icons/not-recommend.svg);
+}
+
+.btn:hover {
+	border-color: var(--c-gray-text);
+}
+
+/* Навигация  */
+
+.nav-tabs {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 30px 0;
+	border-bottom: 1px solid var(--c-gray-border);
+	list-style-type: none;
+}
+
+.nav-tabs__item {
+	display: inline-block;
+	height: 32px;
+	position: relative;
+	bottom: -1px;
+}
+
+.nav-tabs__item:not(:last-child) {
+	margin-right: 40px;
+}
+
+.nav-tabs__link {
+	display: inline-block;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: 700;
+	line-height: 29px;
+	letter-spacing: 1px;
+	vertical-align: bottom;
+	color: var(--c-gray-text);
+	border-bottom: 3px solid rgb(0 0 0 / 0%);
+	transition: color 0.15s ease-out;
+	-webkit-transition: color 0.15s ease-out;
+	-moz-transition: color 0.15s ease-out;
+	-ms-transition: color 0.15s ease-out;
+	-o-transition: color 0.15s ease-out;
+}
+.nav-tabs__item.active .nav-tabs__link {
+	border-bottom-color: var(--c-red);
+	cursor: default;
+}
+
+.nav-tabs__item:not(.nav-tabs__item.active):hover .nav-tabs__link {
+	color: rgb(252 54 59);
+}
+
+/* КОНТЕНТ */
+
+.albums__sort {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 25px 0;
+}
+
+.album__sort-buttons {
+	padding: 1px;
+	border-radius: 4px;
+	background: var(--c-gray-border);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+.album__sort-btn {
+	height: 28px;
+	margin: 0;
+	padding: 0 16px;
+	border: none;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	background: transparent;
+}
+
+.album__sort-btn.active {
+	background: var(--c-yellow);
+}
+
+.albums__container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-left: -12px;
+	margin-right: -12px;
+}
+.album {
+	width: 200px;
+	height: 270px;
+	padding: 7px;
+	margin: 5px;
+	outline: none;
+	box-sizing: content-box;
+	border: 2px solid transparent;
+	transition: border-color 0.15s ease-out;
+	-webkit-transition: border-color 0.15s ease-out;
+	-moz-transition: border-color 0.15s ease-out;
+	-ms-transition: border-color 0.15s ease-out;
+	-o-transition: border-color 0.15s ease-out;
+	cursor: pointer;
+}
+
+.album:hover {
+	border-color: rgb(255 219 77);
+}
+
+.album__cover {
+	margin-bottom: 10px;
+}
+
+.album__cover img {
+	max-width: 100%;
+	width: 100%;
+	vertical-align: bottom;
+}
+
+.album-dscr {
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 400;
+	color: var(--c-gray-text);
+}
+
+.album__name {
+	font: inherit;
+	font-size: 14px;
+	color: #343434;
+}
+.album__artist {
+	font: inherit;
+	margin-top: 4px;
+}
+.album__year {
+	margin-top: 4px;
+}
+
+.album__separator {
+	display: inline-block;
+	width: 2px;
+	height: 2px;
+	margin: -2px 6px 0;
+	content: "";
+	overflow: hidden;
+	vertical-align: middle;
+	background-color: rgb(216 216 216);
+	border-radius: 100%;
+}
+
+@media (max-width: 735px) {
+	.btn__radio {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+	}
+
+	.btn__radio-icon {
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+	}
+
+	.btn__radio-text {
+		display: none;
+	}
+}
+
+@media (max-width: 650px) {
+	.artist__avatar {
+		margin-bottom: 15px;
+	}
+	.artist__page {
+		display: block;
+		/* flex-direction: column;
+		align-items: center; */
+	}
+	.artist__page-button {
+		margin-top: 30px;
+	}
+}
+
+@media (max-width: 500px) {
+	.artist__page {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.artist__page-right {
+		align-items: center;
+	}
+	.artist__descr {
+		text-align: center;
+	}
+
+	.nav-tabs {
+		justify-content: space-between;
+	}
+
+	.album {
+		width: calc((100vw - 95px) / 2);
+		min-width: 140px;
+	}
+}
+
+@media (max-width: 445px) {
+	.artist__page,
+	.nav-tabs {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	.albums__sort {
+		display: block;
+	}
+	.albums__title {
+		text-align: center;
+		margin-bottom: 15px;
+	}
+	.nav-tabs__item:nth-child(3n) {
+		margin-right: 0;
+	}
+
+	.album__sort-buttons {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+	.album__sort-btn {
+		width: 50%;
+	}
+}
